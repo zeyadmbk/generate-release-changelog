@@ -1,19 +1,12 @@
 name: 'generate-changelog-action'
-description: 'GitHub Action for lob/generate-changelog'
-author: 'Scott Brenner'
+description: 'GitHub Action for generating a changelog of all commits in a release'
+author: 'Javier Bullrich'
 outputs:
   changelog:
     description: 'Generate changelog'
-inputs:
-  package-dir:
-    description: 'The path for the package.json if it is not in root'
-    required: false
-    default: 'package.json'
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - ${{ inputs.package-dir }}
 branding:
   icon: 'edit'
   color: 'gray-dark'

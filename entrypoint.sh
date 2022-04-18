@@ -2,6 +2,8 @@
 
 git clone --quiet https://github.com/$REPO &> /dev/null
 
+git config --global --add safe.directory /github/workspace
+
 tag=$(git tag --sort version:refname | tail -n 2 | head -n 1)
 
 if [ "$tag" ]; then

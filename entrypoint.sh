@@ -7,9 +7,9 @@ git config --global --add safe.directory /github/workspace
 tag=$(git tag --sort version:refname | tail -n 2 | head -n 1)
 
 if [ "$tag" ]; then
-  changelog=$(git log --oneline --no-decorate $tag..HEAD)
+  changelog=$(git log --pretty=format:"%C(yellow)%h%Creset %ad [%an]  %s" --date=short $tag..HEAD)
 else
-  changelog=$(git log --oneline --no-decorate)
+  changelog=$(git log --pretty=format:"%C(yellow)%h%Creset %ad [%an]  %s" --date=short)
 fi
 
 echo $changelog

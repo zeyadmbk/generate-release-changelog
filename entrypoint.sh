@@ -1,8 +1,14 @@
 #!/bin/sh -l
 
-git clone --quiet https://github.com/$REPO &> /dev/null
+echo "Repo is ${REPO}"
+
+git clone --quiet https://github.com/$REPO
 
 git config --global --add safe.directory /github/workspace
+
+tags=$(git tag --sort version:refname)
+
+echo "Tags list is ${tags}"
 
 tag=$(git tag --sort version:refname | tail -n 2 | head -n 1)
 

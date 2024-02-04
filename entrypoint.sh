@@ -26,6 +26,7 @@ slackchangelog="${slackchangelog//'%'/'%25'}"
 # slackchangelog="${slackchangelog//$'\n'/'%0A' - }"
 slackchangelog=" - ${slackchangelog//$'\r'/'%0D'}"
 
-# echo "::set-output name=changelog::$changelog"
-echo "changelog=$changelog" >> $GITHUB_OUTPUT
-echo "slackchangelog=$slackchangelog" >> $GITHUB_OUTPUT
+echo "::set-output name=changelog::$changelog"
+echo "::set-output name=slackchangelog::$slackchangelog"
+# echo "changelog=$changelog" >> $GITHUB_OUTPUT
+# echo "slackchangelog=$slackchangelog" >> $GITHUB_OUTPUT

@@ -21,11 +21,11 @@ fi
 echo "Changelog is ### ${changelog}"
 
 changelog="${changelog//'%'/'%25'}"
-# changelog="${changelog//$'\n'/'%0A' - }"
+changelog="${changelog//$'\n'/'%0A' - }"
 changelog=" - ${changelog//$'\r'/'%0D'}"
 
 slackchangelog="${slackchangelog//'%'/'%25'}"
-# slackchangelog="${slackchangelog//$'\n'/'%0A' - }"
+slackchangelog="${slackchangelog//$'\n'/'%0A' - }"
 slackchangelog=" - ${slackchangelog//$'\r'/'%0D'}"
 
 echo "::set-output name=changelog::$changelog"
